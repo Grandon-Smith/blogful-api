@@ -12,15 +12,10 @@ app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common'))
 app.use(cors())
 app.use(helmet())
 
-app.use('/articles', articlesRouter)
+app.use('/api/articles', articlesRouter)
 
 app.get('/', (req, res) => {
   res.send('Hello, world!')
-})
-
-app.get('/xss', (req, res) => {
-  res.cookie('secretToken', '123456789');
-  res.sendFile(__dirname + '/xss-example.html');
 })
 
 app.use(function errorHandler(error, req, res, next) {

@@ -21,6 +21,8 @@ Start nodemon for the application `npm run dev`
 
 Run the tests `npm test`
 
+To seed blogful database run `psql -U dunder_mifflin -d blogful -f ./seeds/seed.blogful_articles.sql` in command prompt
+
 ## Deploying
 
 When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's main branch.

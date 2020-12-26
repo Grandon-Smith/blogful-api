@@ -18,6 +18,10 @@ app.get('/', (req, res) => {
   res.send('Hello, world!')
 })
 
+app.get('/xss', (req, res) => {
+  res.cookie('secretToken', '123456789');
+  res.sendFile(__dirname + '/xss-example.html');
+})
 
 app.use(function errorHandler(error, req, res, next) {
   let response
